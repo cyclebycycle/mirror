@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="com.example.magicmirror.UpdateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <include layout="@layout/layout_main_toolbar" />
+
+        <TextView
+            android:id="@+id/updateTitle"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:editable="false"
+            android:gravity="center"
+            android:text="固件升级"
+            android:textColor="#34495E"
+            android:textSize="20dp"
+            android:background="@drawable/textview_border" />
+
+        <TextView
+            android:id="@+id/updateInfo"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:text=""
+            android:textColor="#34495E"
+            android:background="@drawable/textview_border" />
+
+
+
+        <TextView
+            android:id="@+id/updateNote"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:editable="false"
+            android:text="注意：\n升级过程中镜子请勿断电，请保持手机和镜子的wifi信号良好；\n升级完成后镜子将自动重启！"
+            android:textColor="#34495E"
+            android:background="@drawable/textview_border" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+
+                    android:text="开始"
+                    android:textColor="#34495E"
+                    android:textSize="16sp" />
+
+            </LinearLayout>  
+
+    </LinearLayout>
+</RelativeLayout>

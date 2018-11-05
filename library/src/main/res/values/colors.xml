@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow">#ffff981e</color>
+    <color name="primary">#03A9F4</color>
+    <color name="orange">#fffaaa00</color>
+    <color name="red">#ff144f</color>
+    <color name="blue">#03A9F4</color>
+    <color name="start">#FF7538</color>
+    <color name="end">#FFB2B1</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="default_circle">#E9E9E9</color>
+    <color name="main_text_color_dark3">#ACACAC</color>
+    <color name="darkgray">#a9a9a9</color><!--暗灰色 -->
+</resources>
