@@ -45,7 +45,7 @@ import static com.example.magicmirror.R.id.get_photo;
 
 
 public class StepViewActivity extends AppCompatActivity {
-    private final static String url="http://118.31.46.177/index.php/Home/Android/";
+    private final static String url="http://panhe-tech.cn/index.php/Home/Android/";
     private GitHubService service;
     private final String[] views = {"油分"};
     public final static String[] label1 = {"0","1","2","3","4","5","6","7"};

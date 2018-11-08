@@ -62,7 +62,7 @@ import static java.lang.Thread.sleep;
 
 
 public  class MainActivity extends AppCompatActivity {
-    public final static String url="http://118.31.46.177/index.php/Home/Android/";
+    public final static String url="http://panhe-tech.cn/index.php/Home/Android/";
     private long exitTime = 0;
     private Context mContext;
     private GitHubService service;

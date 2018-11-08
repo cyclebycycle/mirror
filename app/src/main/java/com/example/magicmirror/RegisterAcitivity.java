@@ -68,7 +68,7 @@ public class RegisterAcitivity extends AppCompatActivity implements View.OnClick
                     et_mirrorid.setText("");
                     et_re_username.setText("");
                     et_re_password.setText("");
-                    AlertDialog.Builder builder0 = new AlertDialog.Builder(RegisterAcitivity.this).setTitle("注册失败").setMessage("该用户名和镜子ID已存在");
+                    AlertDialog.Builder builder0 = new AlertDialog.Builder(RegisterAcitivity.this).setTitle("注册失败").setMessage("该镜子ID已存在");
                     builder0.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -129,7 +129,7 @@ public class RegisterAcitivity extends AppCompatActivity implements View.OnClick
                     builder4.create().show();
                     break;
                 case 5:
-                    AlertDialog.Builder builder5 = new AlertDialog.Builder(RegisterAcitivity.this).setTitle("注册失败").setMessage("请检查网络，服务器访问失败");
+                    AlertDialog.Builder builder5 = new AlertDialog.Builder(RegisterAcitivity.this).setTitle("注册失败").setMessage("该镜子不属于商店");
                     builder5.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -137,6 +137,26 @@ public class RegisterAcitivity extends AppCompatActivity implements View.OnClick
                         }
                     });
                     builder5.create().show();
+                    break;
+                case 6:
+                    AlertDialog.Builder builder6 = new AlertDialog.Builder(RegisterAcitivity.this).setTitle("注册失败").setMessage("用户名已存在");
+                    builder6.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+                    builder6.create().show();
+                    break;
+                case 7:
+                    AlertDialog.Builder builder7 = new AlertDialog.Builder(RegisterAcitivity.this).setTitle("注册失败").setMessage("请检查网络，服务器访问失败");
+                    builder7.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+                    builder7.create().show();
                     break;
 
             }
@@ -211,7 +231,7 @@ public class RegisterAcitivity extends AppCompatActivity implements View.OnClick
                     switch (data) {
                         case "0":
                             msg.what = 0;
-                            handler.sendMessage(msg);//该用户名和mirror_id已存
+                            handler.sendMessage(msg);//该mirror_id已存在
                             break;
                         case "1":
                             msg.what = 1;
@@ -229,6 +249,16 @@ public class RegisterAcitivity extends AppCompatActivity implements View.OnClick
                             msg.what = 4;
                             handler.sendMessage(msg);//用户添加成功
                             break;
+                        case "5":
+                            msg.what = 5;
+                            handler.sendMessage(msg);//该镜子不属于商店
+                            break;
+                        case "6":
+                            msg.what = 6;
+                            handler.sendMessage(msg);//用户名已存在
+                            break;
+
+
                     }
                 }
 
@@ -237,7 +267,7 @@ public class RegisterAcitivity extends AppCompatActivity implements View.OnClick
                 public void onFailure(Call<String> call, Throwable t) {
                     System.out.println("访问失败" + t.getMessage());
                     Message msg = new Message();
-                    msg.what = 5;
+                    msg.what = 7;
                     handler.sendMessage(msg);
                 }
             });
